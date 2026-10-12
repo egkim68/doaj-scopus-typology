@@ -1,19 +1,18 @@
 # DOAJ–Scopus typology
 
-Code and data for *A Global DOAJ–Scopus Typology: Indonesia's Disproportionate Gap*.
+R code for *A Global DOAJ–Scopus Typology: Indonesia's Disproportionate Gap*.
 
-- `data/global_all_journals.csv`: ISSN-linked DOAJ (2026) and SJR (2025) journal list (43,817 journals)
-- `code/01_build_dataset.R`: rebuilds the CSV from raw DOAJ and SJR exports (optional)
+- `code/01_build_dataset.R`: links the DOAJ and SJR exports by ISSN
 - `code/02_analysis.R`: all statistics and tables
 - `code/03_make_figures.R`: Figures 2–7 (PNG)
 - `PROTOCOL.md`: definitions and analysis steps
 
 ## Run
 
-Install R packages `tidyverse`, `patchwork` and `ggforce`. Set `DIR` at the top of each script to this folder and paste the script into the R console. Results go to `output/`, which is created automatically.
+Install R packages `tidyverse`, `patchwork` and `ggforce`. Download the DOAJ journal CSV (https://doaj.org) and the SJR 2025 journal export (https://www.scimagojr.com), save them as `raw/doaj2026.csv` and `raw/sjr2025.csv`, and set `DIR` at the top of each script to this folder. Paste the scripts into the R console in order. Output folders are created automatically.
 
-To rebuild the dataset, place `doaj2026.csv` and `sjr2025.csv` in a `raw/` folder and run `01_build_dataset.R`. Both files were downloaded on 17 April 2026; newer downloads will differ slightly.
+The paper used files downloaded on 17 April 2026. DOAJ changes daily, and newer downloads will give slightly different counts. The linked dataset is not posted here; it is available from the author on reasonable request.
 
 ## License
 
-Code: MIT. Data derived from DOAJ (CC0) and SCImago Journal & Country Rank; cite both when reusing.
+MIT (code only). When using the source data, cite DOAJ and SCImago (SJR — SCImago Journal & Country Rank, https://www.scimagojr.com).
